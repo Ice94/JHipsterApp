@@ -41,7 +41,9 @@ jobs:
           key: v1-dependencies-{{ checksum "build.gradle" }}
 
       # run tests and package
-      - run: ./gradlew clean
+      - run:
+            name: Clean and test
+            command: sudo ./gradlew clean test
 
       - run:
           name: Save test results
