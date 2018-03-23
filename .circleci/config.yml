@@ -43,7 +43,7 @@ jobs:
       # run tests and package
       - run:
             name: Clean and test
-            command: sudo ./gradlew clean test --no-daemon
+            command: sudo ./gradlew clean test
 
       - run:
           name: Save test results
