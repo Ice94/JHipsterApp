@@ -64,5 +64,5 @@ jobs:
 
       - run:
           name: Build Docker Image
-          command: sudo chmod +x ./gradlew bootRepackage -Pprod pushDockerLatest pushDockerVersionTag -x test
+          command: sudo ./gradlew bootRepackage -Pprod pushDockerLatest pushDockerVersionTag -x test
 
