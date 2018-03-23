@@ -1,4 +1,5 @@
 [![CircleCI](https://circleci.com/gh/Ice94/JHipsterApp.svg?style=svg)](https://circleci.com/gh/Ice94/JHipsterApp)
+
 #fbloyalty
 This application was generated using JHipster 4.14.1, you can find documentation and help at [http://www.jhipster.tech/documentation-archive/v4.14.1](http://www.jhipster.tech/documentation-archive/v4.14.1).
 
