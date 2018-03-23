@@ -22,6 +22,8 @@ jobs:
       TERM: dumb
 
     steps:
+      - setup_remote_docker
+
       - checkout
 
       # Download and cache dependencies
@@ -53,9 +55,13 @@ jobs:
 
       - store-artifacts:
             path: ~/junit
+
+      - run:
+            name: install yarn
+            command: sudo npm install -g yarn
       - run:
             name: Build Docker Image
-            command: ./gradlew bootRepackage -Pprod buildDocker
+            command: ./gradlew bootRepackage -Pprod buildDocker -x test
 
 
 
