@@ -1,7 +1,3 @@
-# Java Maven CircleCI 2.0 configuration file
-
-# Check https://circleci.com/docs/2.0/language-java/ for more details
-#
 version: 2
 jobs:
   build:
@@ -41,9 +37,7 @@ jobs:
           key: v1-dependencies-{{ checksum "build.gradle" }}
 
       # run tests and package
-      - run:
-            name: Clean and test
-            command: sudo ./gradlew clean test
+      - run: ./gradlew clean
 
       - run:
           name: Save test results
@@ -64,5 +58,4 @@ jobs:
 
       - run:
           name: Build Docker Image
-          command: sudo ./gradlew bootRepackage -Pprod pushDockerLatest pushDockerVersionTag -x test
-
+          command: ./gradlew bootRepackage -Pprod pushDockerLatest pushDockerVersionTag -x test
