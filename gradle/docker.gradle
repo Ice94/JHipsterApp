@@ -24,7 +24,7 @@ docker {
         //url default value
         //url = 'https://index.docker.io/v1/'
         username = 'ice94'
-        password = (System.env.DOCKER_CERT_PATH)
+        password = 'kolorek'
         email = 'mhbratek@gmail.com'
     }
 }
