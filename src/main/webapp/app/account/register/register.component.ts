@@ -5,7 +5,7 @@ import { Register } from './register.service';
 import { LoginModalService } from '../../shared';
 import { RfbLocationService } from '../../entities/rfb-location/rfb-location.service';
 import { RfbLocation } from '../../entities/rfb-location/rfb-location.model';
-
+import { Response}
 @Component({
     selector: 'jhi-register',
     templateUrl: './register.component.html'
@@ -67,10 +67,10 @@ export class RegisterComponent implements OnInit, AfterViewInit {
             page: 0,
             size: 100,
             sort: ['locationName,runDayOfWeek', 'ASC']}).subscribe(
-            (res: ResponseWrapper) => {
+            (res: Response) => {
                 this.locations = res.json;
             },
-            (res: ResponseWrapper) => { console.log(res) }
+            (res: Response) => { console.log(res) }
         );
     }
 
