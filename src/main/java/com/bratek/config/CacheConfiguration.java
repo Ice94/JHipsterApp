@@ -45,6 +45,12 @@ public class CacheConfiguration {
             cm.createCache(com.bratek.domain.PersistentToken.class.getName(), jcacheConfiguration);
             cm.createCache(com.bratek.domain.User.class.getName() + ".persistentTokens", jcacheConfiguration);
             cm.createCache(com.bratek.domain.SocialUserConnection.class.getName(), jcacheConfiguration);
+            cm.createCache(com.bratek.domain.RfbLocation.class.getName(), jcacheConfiguration);
+            cm.createCache(com.bratek.domain.RfbLocation.class.getName() + ".rfbEvents", jcacheConfiguration);
+            cm.createCache(com.bratek.domain.RfbEvent.class.getName(), jcacheConfiguration);
+            cm.createCache(com.bratek.domain.RfbEvent.class.getName() + ".rbfEventAttendances", jcacheConfiguration);
+            cm.createCache(com.bratek.domain.RfbEventAttendance.class.getName(), jcacheConfiguration);
+            cm.createCache(com.bratek.domain.RfbUser.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }
