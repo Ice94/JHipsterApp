@@ -53,6 +53,8 @@ public class UserDTO {
 
     private Set<String> authorities;
 
+    private Long homeLocation;
+
     public UserDTO() {
         // Empty constructor needed for Jackson.
     }
@@ -73,6 +75,26 @@ public class UserDTO {
         this.authorities = user.getAuthorities().stream()
             .map(Authority::getName)
             .collect(Collectors.toSet());
+    }
+
+    public UserDTO(Long id, String login, String firstName, String lastName, String email,
+                   String imageUrl, boolean activated, String langKey, String createdBy,
+                   Instant createdDate, String lastModifiedBy, Instant lastModifiedDate,
+                   Set<String> authorities, Long homeLocation) {
+        this.id = id;
+        this.login = login;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.imageUrl = imageUrl;
+        this.activated = activated;
+        this.langKey = langKey;
+        this.createdBy = createdBy;
+        this.createdDate = createdDate;
+        this.lastModifiedBy = lastModifiedBy;
+        this.lastModifiedDate = lastModifiedDate;
+        this.authorities = authorities;
+        this.homeLocation = homeLocation;
     }
 
     public Long getId() {
@@ -177,6 +199,14 @@ public class UserDTO {
 
     public void setAuthorities(Set<String> authorities) {
         this.authorities = authorities;
+    }
+
+    public Long getHomeLocation() {
+        return homeLocation;
+    }
+
+    public void setHomeLocation(Long homeLocation) {
+        this.homeLocation = homeLocation;
     }
 
     @Override
