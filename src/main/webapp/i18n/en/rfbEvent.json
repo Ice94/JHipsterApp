@@ -19,7 +19,7 @@
             "eventDate": "Event Date",
             "eventCode": "Event Code",
             "rfbLocation": "Rfb Location",
-            "rbfEventAttendance": "Rbf Event Attendance"
+            "rfbEventAttendance": "Rfb Event Attendance"
         }
     }
 }

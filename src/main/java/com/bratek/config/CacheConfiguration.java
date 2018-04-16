@@ -51,6 +51,8 @@ public class CacheConfiguration {
             cm.createCache(com.bratek.domain.RfbEvent.class.getName() + ".rbfEventAttendances", jcacheConfiguration);
             cm.createCache(com.bratek.domain.RfbEventAttendance.class.getName(), jcacheConfiguration);
             cm.createCache(com.bratek.domain.RfbUser.class.getName(), jcacheConfiguration);
+            cm.createCache(com.bratek.domain.RfbEvent.class.getName() + ".rfbEventAttendances", jcacheConfiguration);
+            cm.createCache(com.bratek.domain.RfbUser.class.getName() + ".rfbEventAttendances", jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

@@ -6,7 +6,7 @@ export class RfbEvent implements BaseEntity {
         public eventDate?: any,
         public eventCode?: string,
         public rfbLocationId?: number,
-        public rbfEventAttendances?: BaseEntity[],
+        public rfbEventAttendances?: BaseEntity[],
     ) {
     }
 }

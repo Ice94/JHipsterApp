@@ -15,7 +15,7 @@ public interface RfbEventMapper extends EntityMapper<RfbEventDTO, RfbEvent> {
     RfbEventDTO toDto(RfbEvent rfbEvent);
 
     @Mapping(source = "rfbLocationId", target = "rfbLocation")
-    @Mapping(target = "rbfEventAttendances", ignore = true)
+    @Mapping(target = "rfbEventAttendances", ignore = true)
     RfbEvent toEntity(RfbEventDTO rfbEventDTO);
 
     default RfbEvent fromId(Long id) {
