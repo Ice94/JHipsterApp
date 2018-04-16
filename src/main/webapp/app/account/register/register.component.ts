@@ -1,11 +1,12 @@
-import { Component, OnInit, AfterViewInit, Renderer, ElementRef } from '@angular/core';
-import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import {Component, OnInit, AfterViewInit, Renderer, ElementRef} from '@angular/core';
+import {NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
 
-import { Register } from './register.service';
-import { LoginModalService } from '../../shared';
-import { RfbLocationService } from '../../entities/rfb-location/rfb-location.service';
-import { RfbLocation } from '../../entities/rfb-location/rfb-location.model';
-import { Response}
+import {Register} from './register.service';
+import {LoginModalService} from '../../shared';
+import {RfbLocationService} from '../../entities/rfb-location/rfb-location.service';
+import {RfbLocation} from '../../entities/rfb-location/rfb-location.model';
+import {ResponseWrapper} from '../../shared/model/response-wrapper.model';
+
 @Component({
     selector: 'jhi-register',
     templateUrl: './register.component.html'
@@ -22,13 +23,12 @@ export class RegisterComponent implements OnInit, AfterViewInit {
     modalRef: NgbModalRef;
     locations: RfbLocation[];
 
-    constructor(
-        private loginModalService: LoginModalService,
-        private registerService: Register,
-        private elementRef: ElementRef,
-        private renderer: Renderer,
-        private locationService: RfbLocationService
-    ) {}
+    constructor(private loginModalService: LoginModalService,
+                private registerService: Register,
+                private elementRef: ElementRef,
+                private renderer: Renderer,
+                private locationService: RfbLocationService) {
+    }
 
     ngOnInit() {
         this.success = false;
@@ -66,11 +66,14 @@ export class RegisterComponent implements OnInit, AfterViewInit {
         this.locationService.query({
             page: 0,
             size: 100,
-            sort: ['locationName,runDayOfWeek', 'ASC']}).subscribe(
-            (res: Response) => {
+            sort: ['locationName,runDayOfWeek', 'ASC']
+        }).subscribe(
+            (res: ResponseWrapper) => {
                 this.locations = res.json;
             },
-            (res: Response) => { console.log(res) }
+            (res: ResponseWrapper) => {
+                console.log(res)
+            }
         );
     }
 
